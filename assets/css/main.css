@@ -442,80 +442,130 @@ h6 {
 # Global Footer
 --------------------------------------------------------------*/
 .footer {
-  background-color: #1a1a1a;
-  padding: 40px 0 !important; /* Ensures the overall footer padding */
-  color: #fff !important;
-  font-size: 17px;
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-size: 14px;
+  position: relative;
 }
 
-.footer a {
-  color: #999 !important;
-  text-decoration: none !important;
+.footer .footer-top {
+  padding-top: 50px;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
-.footer a:hover {
-  color: #fff !important;
+.footer .footer-about .logo {
+  line-height: 1;
+  margin-bottom: 25px;
+}
+
+.footer .footer-about .logo img {
+  max-height: 40px;
+  margin-right: 6px;
+}
+
+.footer .footer-about .logo span {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.footer .footer-about p {
+  font-size: 14px;
+  font-family: var(--heading-font);
 }
 
 .footer .social-links a {
-  font-size: 24px !important;
-  color: #999 !important;
-  margin-right: 15px !important;
-  display: inline-block;
-  transition: color 0.3s ease !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+  font-size: 16px;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  margin-right: 10px;
+  transition: 0.3s;
 }
 
 .footer .social-links a:hover {
-  color: #fff !important;
+  color: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
-.footer .nav-item {
-  display: inline-block !important;
-  margin: 0 15px !important;
+.footer h4 {
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 12px;
 }
 
-.footer .nav-link {
-  color: #999 !important;
-  padding: 5px 0 !important;
+.footer .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px; /* Menambah jarak antar elemen */
+  justify-content: center; /* Untuk memastikan elemen berada di tengah */
+  align-items: center; /* Menjaga elemen sejajar vertikal */
 }
 
-.footer .nav-link:hover {
-  color: #fff !important;
+.footer .footer-links ul li {
+  padding: 0; /* Menghilangkan padding untuk menghindari perbedaan */
 }
 
-/* Adjustments to remove space between title, address, and phone */
-.footer-contact p {
-  margin: 0 !important; /* Force removal of margin */
-  padding: 0 !important; /* Force removal of padding */
-  line-height: 1.4 !important; /* Control line spacing */
-  color: #ccc !important; /* Softer text color */
+.footer .footer-links ul a {
+  color: #ccc;
+  font-size: 14px;
+  display: inline-block;
+  line-height: 1;
+  padding: 10px 0; /* Pastikan padding sama untuk semua tautan */
 }
 
-.footer-contact .sitename {
-  margin-bottom: 5px !important; /* Force small margin between title and contact info */
+
+
+.footer .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
 }
 
-.footer-contact strong {
-  font-weight: bold !important; /* Ensure strong text stays bold */
+.footer .footer-links ul li:first-child {
+  padding-top: 0;
 }
 
-.footer .container {
-  padding-bottom: 0 !important; /* Remove bottom padding */
+.footer .footer-links ul a {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  display: inline-block;
+  line-height: 1;
 }
 
-.footer .container p {
-  margin: 0 !important; /* Ensure no extra margin */
-  font-size: 13px !important;
-  color: #999 !important;
+.footer .footer-links ul a:hover {
+  color: var(--accent-color);
 }
 
-.footer .container a {
-  color: #fff !important;
-  text-decoration: underline !important;
+.footer .footer-contact p {
+  margin-bottom: 5px;
 }
 
-.footer .container a:hover {
-  color: #999 !important;
+.footer .copyright {
+  padding: 25px 0;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.footer .copyright p {
+  margin-bottom: 0;
+}
+
+.footer .credits {
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.footer .credits a {
+  color: var(--default-color);
 }
 
 /*--------------------------------------------------------------

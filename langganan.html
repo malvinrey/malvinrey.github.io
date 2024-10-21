@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Form Langganan - PustakaLewiReborn</title>
+  <title>PustakaLewiReborn</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -13,9 +13,7 @@
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=EB+Garamond:ital,wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,291 +24,446 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- Custom CSS -->
   <style>
+    .page-title {
+      background-color: #f4f4f4;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .page-title h1 {
+      font-size: 36px;
+      font-weight: 700;
+    }
+
     .form-langganan {
-      background-color: #f7f7f7;
+      background-color: #fff;
       padding: 40px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-bottom: 40px;
     }
 
     .form-control {
-      border-radius: 50px;
-      padding: 10px 20px;
-      transition: all 0.3s ease;
+      border-radius: 5px;
+      padding: 10px 15px;
+      margin-bottom: 20px;
+      font-size: 16px;
     }
 
-    .form-control:hover {
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      border-color: #007bff;
+    .form-check-label {
+      font-size: 16px;
     }
 
     .form-check-input {
-      transition: 0.3s;
-    }
-
-    .form-check-input:checked {
-      background-color: #007bff;
-      border-color: #007bff;
-      box-shadow: 0 0 10px #007bff;
+      margin-right: 10px;
     }
 
     .btn-primary {
       background-color: #007bff;
       border: none;
-      border-radius: 50px;
-      padding: 10px 30px;
-      transition: background-color 0.3s ease;
+      padding: 12px 25px;
+      font-size: 18px;
+      font-weight: 500;
+      border-radius: 5px;
+      transition: background-color 0.3s;
     }
 
     .btn-primary:hover {
       background-color: #0056b3;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
-    .icon-input {
-      position: relative;
+    .testimonials, .pricing, .faq, .cta, .benefits {
+      padding: 60px 0;
     }
 
-    .icon-input i {
-      position: absolute;
-      left: 15px;
-      top: 50%;
-      transform: translateY(-50%);
+    .pricing-plan {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .testimonial-item, .benefit-item {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .benefits .row {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .benefit-item {
+      flex-grow: 1;
+      padding: 20px;
+      min-height: 250px; /* Menentukan tinggi minimum yang sama */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 10px; /* Memberi jarak antar kotak */
+    }
+
+    .benefit-item i {
+      font-size: 48px;
+      margin-bottom: 15px;
       color: #007bff;
     }
 
-    .icon-input input {
-      padding-left: 40px;
+    .benefit-item h4 {
+      font-size: 24px;
+      font-weight: 600;
     }
 
-    .sent-message {
-      display: none;
-      color: green;
-      font-weight: bold;
-      text-align: center;
-      margin-top: 20px;
+    .benefit-item p {
+      font-size: 16px;
+      margin-top: 10px;
     }
   </style>
+
+
 </head>
 
-<body>
+<header id="header" class="header d-flex align-items-center sticky-top">
+  <div class="container position-relative d-flex align-items-center justify-content-between">
+    <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+      <h1 class="sitename">PustakaLewiReborn</h1>
+    </a>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">Tentang Kami</a></li>
+        <li><a href="single-post.html">Contoh Isi</a></li>
+        <li class="dropdown"><a href="#"><span>Jenis Berita</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul>
+            <li><a>Ekonomi</a></li>
+            <li><a>Politik</a></li>
+            <li><a>Sosial Budaya</a></li>
+            <li><a>Pendidikan</a></li>
+            <li><a>Opini</a></li>
+            <li><a>Teknologi/Sains</a></li>
+            <li><a>Hukum</a></li>
+            <li><a>Agama</a></li>
+            <li><a>Lifestyle</a></li>
+            <li><a>Otomotif</a></li>
+            <li><a>Olahraga</a></li>
+            <li><a>Internasional</a></li>
+          </ul>
+        </li>
+        <li><a href="langganan.html">Langganan Berita</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">PustakaLewiReborn</h1>
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">Tentang Kami</a></li>
-          <li><a href="single-post.html">Contoh Isi</a></li>
-          <li class="dropdown"><a href="#"><span>Jenis Berita</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a>Ekonomi</a></li>
-              <li><a>Politik</a></li>
-              <li><a>Ekonomi</a></li>
-              <li><a>Sosial Budaya</a></li>
-              <li><a>Pendidikan</a></li>
-              <li><a>Opini</a></li>
-              <li><a>Teknologi/Sains</a></li>
-              <li><a>Hukum</a></li>
-              <li><a>Agama</a></li>
-              <li><a>Lifestyle</a></li>
-              <li><a>Otomotif</a></li>
-              <li><a>Olahraga</a></li>
-              <li><a>Internasional</a></li>
-            </ul>
-          </li>
-          <li><a href="langganan.html">Langganan Berita</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-      <div class="header-social-links">
-        <a href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fwww.pustakalewi.com%2Fbuku-tamu%2F&linkname=Buku%20Tamu&linknote=" class="twitter"><i class="bi bi-twitter-x"></i></a>
-        <a href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fwww.pustakalewi.com%2Fbuku-tamu%2F&linkname=Buku%20Tamu&linknote=" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="https://www.addtoany.com/add_to/whatsapp?linkurl=https%3A%2F%2Fwww.pustakalewi.com%2Fbuku-tamu%2F&linkname=Buku%20Tamu&linknote=" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
-        <a href="https://www.addtoany.com/add_to/telegram?linkurl=https%3A%2F%2Fwww.pustakalewi.com%2Fbuku-tamu%2F&linkname=Buku%20Tamu&linknote=" class="telegram"><i class="bi bi-telegram"></i></a>
-      </div>
-
+    <div class="header-social-links">
+      <a href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fwww.pustakalewi.com%2Fbuku-tamu%2F&linkname=Buku%20Tamu&linknote=" class="twitter"><i class="bi bi-twitter-x"></i></a>
+      <a href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fwww.pustakalewi.com%2Fbuku-tamu%2F&linkname=Buku%20Tamu&linknote=" class="facebook"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.addtoany.com/add_to/whatsapp?linkurl=https%3A%2F%2Fwww.pustakalewi.com%2Fbuku-tamu%2F&linkname=Buku%20Tamu&linknote=" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
+      <a href="https://www.addtoany.com/add_to/telegram?linkurl=https%3A%2F%2Fwww.pustakalewi.com%2Fbuku-tamu%2F&linkname=Buku%20Tamu&linknote=" class="telegram"><i class="bi bi-telegram"></i></a>
     </div>
-  </header>
+  </div>
+</header>
 
+<body>
   <main class="main">
     <!-- Page Title -->
     <div class="page-title">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Form Langganan</h1>
-      </div>
-    </div><!-- End Page Title -->
-
-    <div class="container">
-      <div class="row justify-content-center">
-
-        <div class="col-lg-8">
-
-          <!-- Form Langganan Section -->
-          <section id="form-langganan" class="form-langganan section" data-aos="fade-up">
-            <div class="container">
-
-              <form action="about:blank" method="post" class="php-email-form" onsubmit="return handleFormSubmit()">
-                <div class="row gy-4">
-
-                  <!-- Nama -->
-                  <div class="col-md-6 icon-input">
-                    <i class="bi bi-person"></i>
-                    <input type="text" id="name" name="name" class="form-control" placeholder="Nama Anda" required="">
-                  </div>
-
-                  <!-- Email -->
-                  <div class="col-md-6 icon-input">
-                    <i class="bi bi-envelope"></i>
-                    <input type="email" class="form-control" name="email" placeholder="Email Anda" required="">
-                  </div>
-
-                  <!-- Pilihan Paket Langganan -->
-                  <div class="col-md-12">
-                    <h4>Pilih Paket Langganan</h4>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="paket" id="paket1" value="Basic">
-                      <label class="form-check-label" for="paket1">
-                        Paket Basic - Rp50.000/bulan
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="paket" id="paket2" value="Premium">
-                      <label class="form-check-label" for="paket2">
-                        Paket Premium - Rp100.000/bulan
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="paket" id="paket3" value="Ultimate">
-                      <label class="form-check-label" for="paket3">
-                        Paket Ultimate - Rp150.000/bulan
-                      </label>
-                    </div>
-                  </div>
-
-                  <!-- Pilihan Kategori Langganan -->
-                  <div class="col-md-12">
-                    <h4>Pilih Kategori Berita yang Ingin Dilanggani</h4>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" name="kategori[]" value="Ekonomi" id="ekonomi">
-                      <label class="form-check-label" for="ekonomi">Ekonomi</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" name="kategori[]" value="Politik" id="politik">
-                      <label class="form-check-label" for="politik">Politik</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" name="kategori[]" value="Sosial Budaya" id="sosial-budaya">
-                      <label class="form-check-label" for="sosial-budaya">Sosial Budaya</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" name="kategori[]" value="Teknologi/Sains" id="teknologi">
-                      <label class="form-check-label" for="teknologi">Teknologi/Sains</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" name="kategori[]" value="Pendidikan" id="pendidikan">
-                      <label class="form-check-label" for="pendidikan">Pendidikan</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" name="kategori[]" value="Olahraga" id="olahraga">
-                      <label class="form-check-label" for="olahraga">Olahraga</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" name="kategori[]" value="Lifestyle" id="lifestyle">
-                      <label class="form-check-label" for="lifestyle">Lifestyle</label>
-                    </div>
-                  </div>
-
-                  <!-- Tombol Kirim -->
-                  <div class="col-md-12 text-center">
-                    <button type="submit" class="btn btn-primary">Langganan</button>
-                  </div>
-
-                </div>
-              </form>
-
-              <!-- Pesan sukses -->
-              <div class="sent-message">Terima kasih telah berlangganan!</div>
-
-            </div>
-          </section><!-- /Form Langganan Section -->
-
-        </div>
-
+      <div class="container">
+        <h1 class="mb-2">Form Langganan Berita</h1>
       </div>
     </div>
+
+    <!-- Form Langganan Section -->
+    <section id="form-langganan" class="form-langganan section">
+      <div class="container">
+        <form action="about:blank" method="post" class="php-email-form" onsubmit="return validateForm()">
+          <div class="row gy-4">
+            <!-- Nama -->
+            <div class="col-md-6">
+              <input type="text" id="name" name="name" class="form-control" placeholder="Nama Anda" required>
+            </div>
+
+            <!-- Email -->
+            <div class="col-md-6">
+              <input type="email" class="form-control" name="email" placeholder="Email Anda" required>
+            </div>
+
+            <!-- Pilihan Kategori Langganan -->
+            <div class="col-md-12">
+              <h4>Pilih Kategori Berita yang Ingin Dilanggani</h4>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="kategori[]" value="Ekonomi" id="ekonomi">
+                <label class="form-check-label" for="ekonomi">Ekonomi</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="kategori[]" value="Politik" id="politik">
+                <label class="form-check-label" for="politik">Politik</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="kategori[]" value="Sosial Budaya" id="sosial-budaya">
+                <label class="form-check-label" for="sosial-budaya">Sosial Budaya</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="kategori[]" value="Teknologi/Sains" id="teknologi">
+                <label class="form-check-label" for="teknologi">Teknologi/Sains</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="kategori[]" value="Pendidikan" id="pendidikan">
+                <label class="form-check-label" for="pendidikan">Pendidikan</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="kategori[]" value="Olahraga" id="olahraga">
+                <label class="form-check-label" for="olahraga">Olahraga</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="kategori[]" value="Lifestyle" id="lifestyle">
+                <label class="form-check-label" for="lifestyle">Lifestyle</label>
+              </div>
+            </div>
+
+            <!-- Tombol Kirim -->
+            <div class="col-md-12 text-center">
+              <button type="submit" class="btn btn-primary">Langganan</button>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Testimoni Pelanggan -->
+    <section class="testimonials section">
+      <div class="container">
+        <h2 class="text-center mb-4">Apa Kata Pelanggan Kami</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="testimonial-item">
+              <p>"PustakaLewiReborn memberikan berita yang sangat update dan terpercaya, sangat puas berlangganan di sini!"</p>
+              <h5>- John Doe</h5>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="testimonial-item">
+              <p>"Berlangganan berita ekonomi membantu saya dalam keputusan bisnis saya. Informasi yang sangat akurat dan cepat."</p>
+              <h5>- Jane Smith</h5>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="testimonial-item">
+              <p>"Saya suka berlangganan berita teknologi dari PustakaLewiReborn, selalu ada inovasi terbaru!"</p>
+              <h5>- Lisa Adams</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Penawaran Paket Langganan -->
+    <section class="pricing section">
+      <div class="container">
+        <h2 class="text-center mb-4">Paket Langganan</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="pricing-plan">
+              <h3>Paket Harian</h3>
+              <p>Rp 10.000/hari</p>
+              <ul>
+                <li>Akses semua kategori berita</li>
+                <li>Update harian</li>
+                <li>Support via email</li>
+              </ul>
+              <button class="btn btn-primary">Pilih Paket</button>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="pricing-plan">
+              <h3>Paket Mingguan</h3>
+              <p>Rp 50.000/minggu</p>
+              <ul>
+                <li>Akses semua kategori berita</li>
+                <li>Update mingguan</li>
+                <li>Support via email & WhatsApp</li>
+              </ul>
+              <button class="btn btn-primary">Pilih Paket</button>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="pricing-plan">
+              <h3>Paket Bulanan</h3>
+              <p>Rp 150.000/bulan</p>
+              <ul>
+                <li>Akses semua kategori berita</li>
+                <li>Update bulanan</li>
+                <li>Support 24/7</li>
+              </ul>
+              <button class="btn btn-primary">Pilih Paket</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq section">
+      <div class="container">
+        <h2 class="text-center mb-4">Pertanyaan yang Sering Diajukan</h2>
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                Bagaimana cara berlangganan?
+              </button>
+            </h3>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Anda bisa berlangganan dengan mengisi form di atas dan memilih paket langganan yang sesuai.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                Apakah saya bisa membatalkan langganan kapan saja?
+              </button>
+            </h3>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Ya, Anda bisa membatalkan langganan kapan saja melalui pengaturan akun Anda atau menghubungi tim support.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                Apa metode pembayaran yang tersedia?
+              </button>
+            </h3>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Kami menerima pembayaran melalui transfer bank, kartu kredit, dan e-wallet seperti GoPay dan OVO.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Keuntungan Berlangganan -->
+    <section class="benefits section">
+      <div class="container">
+        <h2 class="text-center mb-4">Keuntungan Berlangganan</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="benefit-item text-center">
+              <i class="bi bi-lightning-charge-fill"></i>
+              <h4>Update Berita Cepat</h4>
+              <p>Dapatkan berita terbaru lebih cepat dari sumber terpercaya.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="benefit-item text-center">
+              <i class="bi bi-star-fill"></i>
+              <h4>Akses Premium</h4>
+              <p>Akses ke konten eksklusif dan analisis mendalam.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="benefit-item text-center">
+              <i class="bi bi-chat-dots-fill"></i>
+              <h4>Dukungan 24/7</h4>
+              <p>Tim support siap membantu Anda kapan saja.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta text-center py-5">
+      <div class="container">
+        <h2>Bergabung dengan Ratusan Pelanggan Kami!</h2>
+        <p>Jangan lewatkan berita terbaru dari PustakaLewiReborn. Berlangganan sekarang dan dapatkan informasi terupdate setiap hari.</p>
+        <button class="btn btn-primary btn-lg">Berlangganan Sekarang</button>
+      </div>
+    </section>
 
   </main>
 
   <footer id="footer" class="footer dark-background">
     <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a style="font-size: 30px !important;" href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">PustakaLewiReborn</span>
-          </a>
-          <div class="footer-contact pt-3">
-            <p style="font-size: 14px !important;">58130 (Penerbitan Surat Kabar, Jurnal dan Buletin atau Surat Kabar)</p>
-            <p style="font-size: 14px !important;">Diponegoro 186 (Lantai 2), Surabaya</p>
-            <p style="font-size: 14px !important;" class="mt-3"><strong>Phone:</strong> <span>(031) 5687372</span></p>
-            <p style="font-size: 14px !important;"><strong>Email:</strong> <span>redaksi@pustakalewi.net</span></p>
-          </div>
-        </div>
+        <div class="row gy-4" !important;>
+            <div class="col-lg-4 col-md-6 footer-about ">
+                <a style="font-size: 30px " href="index.html" class="logo d-flex align-items-center">
+                    <span class="sitename">PustakaLewiReborn</span>
+                </a>
+                <div class="footer-contact pt-3">
+                    <p style="font-size: 14px !important;">58130 (Penerbitan Surat Kabar, Jurnal dan Buletin atau Surat Kabar)</p>
+                    <p style="font-size: 14px !important;">Diponegoro 186 (Lantai 2), Surabaya</p>
+                    <p style="font-size: 14px !important;"><strong>Phone:</strong> <span>(031) 5687372</span></p>
+                    <p style="font-size: 14px !important;"><strong>Email:</strong> <span>redaksi@pustakalewi.net</span></p>
+                </div>
+            </div>
 
-        <div class="col-lg-8 footer-links">
-          <div class="d-flex justify-content-end">
-            <ul class="nav">
-              <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-              <li class="nav-item"><a href="about.html" class="nav-link">About us</a></li>
-              <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
-          </div>
+            <div class="col-lg-8 footer-links d-flex justify-content-lg-end justify-content-center align-items-center">
+                <ul class="nav" style="list-style: none; display: flex; gap: 20px; padding-left: 0;">
+                    <li class="nav-item"><a href="index.html" class="nav-link" style="color: #ccc;"></a></li> <!-- sengaja dikosongkan karena marginnya menjadi error -->
+                    <li class="nav-item"><a href="about.html" class="nav-link" style="color: #ccc;">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link" style="color: #ccc;">About us</a></li>
+                    <li class="nav-item"><a class="nav-link" style="color: #ccc;">Terms of Service</a></li>
+                    <li class="nav-item"><a class="nav-link" style="color: #ccc;">Privacy Policy</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link" style="color: #ccc;">Contact Us</a></li>
+                </ul>
+            </div>
         </div>
-      </div>
     </div>
-  </footer>
+
+    <!-- Social Links -->
+    <div class="container text-center mt-4">
+        <div class="social-links d-flex justify-content-center mb-4">
+            <a href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fwww.pustakalewi.com%2Fbuku-tamu%2F&linkname=Buku%20Tamu&linknote=" class="twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fwww.pustakalewi.com%2Fbuku-tamu%2F&linkname=Buku%20Tamu&linknote=" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.addtoany.com/add_to/whatsapp?linkurl=https%3A%2F%2Fwww.pustakalewi.com%2Fbuku-tamu%2F&linkname=Buku%20Tamu&linknote=" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
+            <a href="https://www.addtoany.com/add_to/telegram?linkurl=https%3A%2F%2Fwww.pustakalewi.com%2Fbuku-tamu%2F&linkname=Buku%20Tamu&linknote=" class="telegram"><i class="bi bi-telegram"></i></a>
+        </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">ZenBlog</strong> <span>All Rights Reserved</span></p>
+        <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you've purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+    </div>
+</footer>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <!-- Custom JavaScript -->
   <script>
-    function handleFormSubmit() {
-      // Validasi nama agar tidak "NaN"
+    function validateForm() {
       const name = document.getElementById('name').value;
       if (name.toLowerCase() === 'nan') {
         alert("Nama tidak boleh 'NaN'.");
         return false;
       }
-
-      // Menampilkan pesan sukses setelah submit
-      document.querySelector('.sent-message').style.display = 'block';
-      
-      // Mencegah pengiriman form (untuk demo)
-      return false;
+      return true;
     }
   </script>
 
